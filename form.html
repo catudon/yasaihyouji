@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>野菜入力フォーム</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #f0f8ff;
+      padding: 20px;
+    }
+    h1 {
+      color: #2e8b57;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 700px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .row input[type="text"],
+    .row select {
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 140px;
+      font-size: 1em;
+    }
+    .row input[type="number"] {
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 80px;
+    }
+    .row input[type="file"] {
+      width: 180px;
+    }
+    #newItems {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px;
+      background-color: #2e8b57;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3cb371;
+    }
+  </style>
+</head>
+<body>
+  <h1>野菜の個数・単価・画像を入力</h1>
+  <p>写真を入れた場合は写真に、写真を入れなかった場合は選択した絵文字になります。</p>
+
+  <form action="display.html" method="get" enctype="multipart/form-data">
+    <div id="newItems"></div>
+
+    <button type="button" onclick="addNewItem()">＋ 野菜を追加</button>
+    <button type="submit">表示ページへ</button>
+  </form>
+
+  <script>
+    const emojiOptions = [
+      { label: "🥕", value: "🥕" },
+      { label: "🍅", value: "🍅" },
+      { label: "🥒", value: "🥒" },
+      { label: "🥬", value: "🥬" },
+      { label: "🫑", value: "🫑" },
+      { label: "🥗", value: "🥗" },
+      { label: "🧅", value: "🧅" },
+      { label: "🥔", value: "🥔" },
+      { label: "🌱", value: "🌱" },
+      { label: "🍆", value: "🍆" },
+    ];
+
+    let newCount = 0;
+
+    function addNewItem() {
+      newCount++;
+      const container = document.getElementById("newItems");
+      const div = document.createElement("div");
+      div.className = "row";
+
+      let emojiSelectHTML = '<select name="new_emoji_' + newCount + '">';
+      emojiOptions.forEach(opt => {
+        emojiSelectHTML += `<option value="${opt.value}">${opt.label}</option>`;
+      });
+      emojiSelectHTML += '</select>';
+
+      div.innerHTML = `
+        <input type="text" name="new_name_${newCount}" placeholder="名前" required>
+        <input type="number" name="new_count_${newCount}" placeholder="個数" min="0" required>
+        <input type="number" name="new_price_${newCount}" placeholder="単価" min="0" required>
+        <input type="file" name="new_img_${newCount}" accept="image/*">
+        ${emojiSelectHTML}
+        <label>
+          <input type="checkbox" name="new_recommend_${newCount}" value="1">
+          おすすめにする
+        </label>
+      `;
+        container.appendChild(div);
+      }
+  </script>
+</body>
+</html>
