@@ -106,14 +106,28 @@
       border-style: solid;
       border-color: transparent #ffcc66 transparent transparent;
     }
+    footer {
+      margin-top: 100px;
+      z-index: 1;
+      position: relative;
+    }
+
   </style>
 </head>
 <body>
   <h1>直売所野菜表示プロトタイプ</h1>
-
+<footer>
+  <p style="color: red;">※実際の商品ではありません</p>
+  <p>
+    アンケートを募集しています。アンケートは
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvETfqDSDGOIo0oQibs4PrzGRt_vi6dsEzKqiPyljdj8-ttw/viewform?usp=header">こちら</a>
+  </p>
+</footer>
   <div class="recommend-box">
     <h2>本日のおすすめ</h2>
-    <div class="recommend-items" id="recommendBox"></div>
+
+
+  <div class="recommend-items" id="recommendBox"></div>
   </div>
 
   <div class="veggie-box" id="veggieDisplay"></div>
@@ -228,7 +242,7 @@
       if (withBalloon) {
         balloon = document.createElement('div');
         balloon.className = 'balloon help';
-        balloon.textContent = 'おすすめに選んだ野菜がここに表示';
+        balloon.textContent = 'おすすめに選んだ野菜がここに表示されるよ〜☆';
       }
 
       return { element: div, balloon };
@@ -291,3 +305,4 @@
   </script>
 </body>
 </html>
+
