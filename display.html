@@ -8,6 +8,7 @@
       font-family: "Arial", sans-serif;
       background-color: #f0fff0;
       padding: 20px;
+      font-size: 33px;
     }
     h1 {
       color: #2e8b57;
@@ -92,7 +93,7 @@
       padding: 22px 14px;
       border-radius: 10px;
       box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-      z-index: 9999;
+      z-index: 999;
       pointer-events: none;
       position: absolute;
       white-space: pre-wrap;
@@ -242,7 +243,7 @@
       if (withBalloon) {
         balloon = document.createElement('div');
         balloon.className = 'balloon help';
-        balloon.textContent = 'おすすめに選んだ野菜がここに表示されます';
+        balloon.textContent = 'おすすめに選んだ野菜がここに表示されるよ〜☆';
       }
 
       return { element: div, balloon };
@@ -276,7 +277,7 @@
       const rect = carrotDiv.getBoundingClientRect();
       extraBalloon.style.top = `${window.scrollY + rect.top}px`;
       extraBalloon.style.left = `${window.scrollX + rect.right + 10}px`;
-      extraBalloon.style.zIndex = "9999";
+      extraBalloon.style.zIndex = "999";
     }
 
 
@@ -296,14 +297,14 @@
       const rect = onionDiv.getBoundingClientRect();
       balloon.style.top = `${window.scrollY + rect.top}px`;
       balloon.style.left = `${window.scrollX + rect.right + 10}px`; // ←右にずらす
-      balloon.style.zIndex = "9999";
+      balloon.style.zIndex = "999";
     }
 
     addExtraBalloonForCarrot();
     addExtraBalloonForOnion();
 
   </script>
-</body>
-<div style="height: 200px;"></div>
-</html>
+  <div style="height: 200px;"></div>
 
+</body>
+</html>
