@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>直売所野菜表示プロトタイプ</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #f0fff0;
+      padding: 20px;
+      font-size: 33px;
+    }
+    h1 {
+      color: #2e8b57;
+    }
+    footer {
+      margin-top: 100px;
+      z-index: 1;
+      position: relative;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>直売所野菜表示プロトタイプ</h1>
+    <p>私たち「情報発信チーム」は、道の駅しょうなんの直売所における情報発信がうまく伝わっていないという課題に注目し、既存の直売所ユーザーに向けた情報発信アプリの開発を検討しています。<br>
+        現在、以下のような機能を備えたプロトタイプを作成しています：<br>
+        <ul>
+        <li>野菜の在庫状況を色分けで表示（緑 → オレンジ → 灰色）</li>
+        <li>野菜ごとの情報表示（値段、種類、個数）</li>
+        </ul>
+        ぜひ、実際にプロトタイプを体験していただき、ご意見・ご感想をお聞かせいただければ幸いです。</p>
+    <footer>
+    <div style="text-align: center;"><a href="display.html" style="background: #000000; color: #ffffff; border-radius: 50vh; padding: 1em 2em 0.8em; line-height:1; display: inline-block;">プロトタイプへ</a></div>
+
+        アンケートを募集しています。アンケートは
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvETfqDSDGOIo0oQibs4PrzGRt_vi6dsEzKqiPyljdj8-ttw/viewform?usp=header">こちら</a>
+    </p>
+    </footer>
+
+</body>
+</html>
